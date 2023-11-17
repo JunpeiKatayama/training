@@ -1,5 +1,6 @@
+package two_sum;
+
 import java.util.*;
-import java.util.stream.IntStream;
 
 // my answer
 // https://leetcode.com/problems/two-sum/
@@ -108,7 +109,7 @@ class Test3 {
 // https://leetcode.com/problems/two-sum/editorial/?source=submission-ac#:~:text=Approach%203%3A%20One%2Dpass%20Hash%20Table
 // Time complexity  : O(n) ... ハッシュテーブルの検索にかかるのは O(1)
 // Space complexity : O(n) ... map に入力値分のサイズが必要なため
-// 1. key: num, value: index の Map を作成しつつ、補数が見つかれば解となる
+// 1. key: num, value: index の Map を作成しつつ、補数が見つかれば解となる:w
 class Solution4 {
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
