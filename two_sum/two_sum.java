@@ -24,7 +24,7 @@ class Solution {
 class Test {
     public static void main(String[] args) {
         Solution s = new Solution();
-        int[] a = s.twoSum(new int[]{1,2,3,4,5,6}, 6);
+        int[] a = s.twoSum(new int[]{1,2,3,7,5,6}, 6);
         int[] b = s.twoSum(new int[]{3,3}, 6);
         int[] c = s.twoSum(new int[]{3,2,4}, 6);
         int[] d = s.twoSum(new int[]{0,4,3,0}, 0);
@@ -55,7 +55,7 @@ class Solution2 {
 class Test2 {
     public static void main(String[] args) {
         Solution2 s = new Solution2();
-        int[] a = s.twoSum(new int[]{1,2,3,4,5,6}, 6);
+        int[] a = s.twoSum(new int[]{1,2,3,7,5,6}, 6);
         int[] b = s.twoSum(new int[]{3,3}, 6);
         int[] c = s.twoSum(new int[]{3,2,4}, 6);
         int[] d = s.twoSum(new int[]{0,4,3,0}, 0);
@@ -93,7 +93,40 @@ class Solution3 {
 class Test3 {
     public static void main(String[] args) {
         Solution3 s = new Solution3();
-        int[] a = s.twoSum(new int[]{1,2,3,4,5,6}, 6);
+        int[] a = s.twoSum(new int[]{1,2,3,7,5,6}, 6);
+        int[] b = s.twoSum(new int[]{3,3}, 6);
+        int[] c = s.twoSum(new int[]{3,2,4}, 6);
+        int[] d = s.twoSum(new int[]{0,4,3,0}, 0);
+        System.out.println("may be: [0, 4]," + "actual: " + Arrays.toString(a));
+        System.out.println("may be: [0, 1]," + "actual: " + Arrays.toString(b));
+        System.out.println("may be: [1, 2]," + "actual: " + Arrays.toString(c));
+        System.out.println("may be: [0, 3]," + "actual: " + Arrays.toString(d));
+    }
+}
+
+// one-pass hash table
+// https://leetcode.com/problems/two-sum/editorial/?source=submission-ac#:~:text=Approach%203%3A%20One%2Dpass%20Hash%20Table
+// Time complexity  : O(n) ... ハッシュテーブルの検索にかかるのは O(1)
+// Space complexity : O(n) ... map に入力値分のサイズが必要なため
+// 1. key: num, value: index の Map を作成しつつ、補数が見つかれば解となる
+class Solution4 {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if(map.containsKey(complement)) {
+                return new int[] {map.get(complement), i};
+            }
+            map.put(nums[i], i);
+        }
+        return null;
+    }
+}
+
+class Test4 {
+    public static void main(String[] args) {
+        Solution4 s = new Solution4();
+        int[] a = s.twoSum(new int[]{1,2,3,7,5,6}, 6);
         int[] b = s.twoSum(new int[]{3,3}, 6);
         int[] c = s.twoSum(new int[]{3,2,4}, 6);
         int[] d = s.twoSum(new int[]{0,4,3,0}, 0);
