@@ -1,8 +1,5 @@
 package climbing_stairs;
 
-import java.util.ArrayList;
-import java.util.List;
-
 // climbStairs
 // https://leetcode.com/problems/climbing-stairs/description/
 // space optimization
