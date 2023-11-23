@@ -1,7 +1,6 @@
 package roman_to_integer;
 
 import java.util.*;
-import java.util.stream.IntStream;
 
 // my answer
 // https://leetcode.com/problems/roman-to-integer/

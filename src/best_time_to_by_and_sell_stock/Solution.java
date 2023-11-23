@@ -1,7 +1,5 @@
 package best_time_to_by_and_sell_stock;
 
-import java.util.*;
-
 // my answer
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 // O(n^2) の解消ができず、case 203 でタイムリミットとなった

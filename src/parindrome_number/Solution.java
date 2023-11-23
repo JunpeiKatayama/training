@@ -1,7 +1,5 @@
 package parindrome_number;
 
-import java.util.*;
-
 // my answer
 // https://leetcode.com/problems/palindrome-number/
 class Solution {
